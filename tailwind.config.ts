@@ -15,7 +15,6 @@ export default {
     },
     extend: {
       colors: {
-        // background: '#FAFAFA',
         card: '#F0F0F0',
         'grey-light': '#CCCCCC',
         'grey-medium': '#D1D1D1',
@@ -24,8 +23,6 @@ export default {
         purple: '#8977F3',
         'purple-light': '#A59DFF',
         black: '#121212',
-        'black-dark': '#1C1C1C',
-        // 'black-text': '#151515',
       },
     },
   },

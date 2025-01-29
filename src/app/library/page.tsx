@@ -1,3 +1,5 @@
+import { PageHeading } from '@/components';
+
 export default function LibraryPage() {
-  return <h1 className='text-black text-[48px] font-bold'>Библиотека</h1>;
+  return <PageHeading title='Библиотека' />;
 }

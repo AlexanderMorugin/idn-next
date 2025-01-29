@@ -10,7 +10,7 @@ interface Props {
 export const Card: FC<Props> = ({ imageUrl, title, subtitle }) => {
   return (
     <div className='flex flex-col justify-between h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab md:mt-0 md:h-[256px]'>
-      <div className='flex flex-row justify-between gap-6 md:flex-col'>
+      <div className='flex flex-row justify-between gap-6 h-full md:flex-col'>
         <Image
           src={imageUrl}
           alt='Картинка карточки'

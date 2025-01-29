@@ -1,3 +1,5 @@
+import { PageHeading } from '@/components';
+
 export default function SchoolPage() {
-  return <h1 className='text-black text-[48px] font-bold'>О школе</h1>;
+  return <PageHeading title='О школе' />;
 }

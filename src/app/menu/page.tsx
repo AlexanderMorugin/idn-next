@@ -1,3 +1,5 @@
+import { PageHeading } from '@/components';
+
 export default function MenuPage() {
-  return <h1 className='text-black text-[48px] font-bold'>Меню</h1>;
+  return <PageHeading title='Меню' />;
 }

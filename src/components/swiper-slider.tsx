@@ -14,7 +14,6 @@ import cardTraining from '@/assets/images/card-training.svg';
 import cardInterview from '@/assets/images/card-interview.svg';
 import cardRecommend from '@/assets/images/card-recommend.svg';
 import { Card, Container } from '.';
-import { cn } from '@/lib/cn';
 
 export const cardData = [
   {
@@ -52,18 +51,12 @@ export const cardData = [
   },
 ];
 
-interface Props {
-  // slides: number;
-  className?: string;
-}
-
-export const SwiperSlider: FC<Props> = ({ 
-  // slides, 
-  className }) => {
+export const SwiperSlider: FC = ({}) => {
   return (
-    <Container className={cn(className, 'px-4 pt-[21px]')}>
+    <Container className='px-4 pt-[21px]'>
       <Swiper
         loop={true}
+        speed={1000}
         spaceBetween={16}
         slidesPerView='auto'
         observer={true}
