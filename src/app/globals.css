@@ -3,19 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --background: #FAFAFA;
+  --background: #fafafa;
   --foreground: #151515;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.swiper-pagination {
+  top: 10px !important;
+  text-align: left !important;
+}
+
+.swiper-slide {
+  width: 412px !important;
+  height: 350px !important;
+  position: static !important;
+
+  @media (max-width: 768px) {
+    width: 358px !important;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1) !important;
+  background: #ccc !important;
+  background-image: url('../assets/icons/pagination-bullet-active.svg') !important;
+  background-repeat: no-repeat !important;
 }

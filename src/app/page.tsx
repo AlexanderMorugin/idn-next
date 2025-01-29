@@ -1,10 +1,11 @@
-import { CardBox, Heading } from '@/components';
+import { Heading } from '@/components';
+import { SwiperSlider } from '@/components/swiper-slider';
 
 export default function Home() {
   return (
     <>
       <Heading />
-      <CardBox />
+      <SwiperSlider />
     </>
   );
 }
