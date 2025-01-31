@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-// 'use client';
+'use client';
 
 import Image from 'next/image';
 
@@ -8,6 +8,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Card } from '@prisma/client';
+import { useCardStore } from '../../store/use-card-store';
+import { useEffect } from 'react';
 // import { useCardStore } from '../../store/use-card-store';
 // import { useEffect } from 'react';
 
@@ -53,11 +55,9 @@ const settings = {
 };
 
 export async function getStaticProps() {
- 
-  // Call the fetch method and passing 
+  // Call the fetch method and passing
   // the pokeAPI link
-  const response = await fetch(
-      'https://idn-next-jswp.vercel.app/api/cards/');
+  const response = await fetch('https://idn-next-jswp.vercel.app/api/cards/');
 
   // Parse the JSON
   const data = await response.json();
@@ -65,44 +65,40 @@ export async function getStaticProps() {
   // Finally we return the result
   // inside props as allPokemons
   return {
-      props: { cardItems: data.results },
+    props: { cardItems: data.results },
   };
 }
 
-export const SlickStaticProps = ({cardItems}: any) => {
-  // const { cardItems, getCardItems } = useCardStore((state) => state);
+export const SlickStaticProps = () => {
+  const { cardItems, getCardItems } = useCardStore((state) => state);
 
-  // useEffect(() => {
-  //   getCardItems();
-  // }, [getCardItems]);
+  useEffect(() => {
+    getCardItems();
+  }, [getCardItems]);
+  
+  const slides = cardItems.map((item: Card) => (
+    <aside key={item.id} className='p-4'>
+      <div className='flex flex-col justify-between h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab md:mt-0 md:h-[256px]'>
+        <div className='flex flex-row justify-between gap-6 h-full md:flex-col'>
+          <Image
+            src={item.imageUrl}
+            alt='Картинка карточки'
+            className='w-[60px] h-[60px] md:w-[80px] md:h-[80px]'
+            width={80}
+            height={80}
+          />
+          <p className='text-[24px]/[28px] md:text-[32px]/[36px]'>
+            {`Карточка - ${item.title}`}
+          </p>
+        </div>
 
-  return (
-    <Slider {...settings}>
-      {cardItems.map((item: Card) => {
-        return (
-          <aside key={item.id} className='p-4'>
-            <div className='flex flex-col justify-between h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab md:mt-0 md:h-[256px]'>
-              <div className='flex flex-row justify-between gap-6 h-full md:flex-col'>
-                <Image
-                  src={item.imageUrl}
-                  alt='Картинка карточки'
-                  className='w-[60px] h-[60px] md:w-[80px] md:h-[80px]'
-                  width={80}
-                  height={80}
-                />
-                <p className='text-[24px]/[28px] md:text-[32px]/[36px]'>
-                  {item.title}
-                </p>
-              </div>
+        {/** Subtitle появляется только в мобильной версии */}
+        <div className='text-[14px]/[20px] tracking-wide md:hidden'>
+          {item.subtitle}
+        </div>
+      </div>
+    </aside>
+  ));
 
-              {/** Subtitle появляется только в мобильной версии */}
-              <div className='text-[14px]/[20px] tracking-wide md:hidden'>
-                {item.subtitle}
-              </div>
-            </div>
-          </aside>
-        );
-      })}
-    </Slider>
-  );
+  return <Slider {...settings}>{slides}</Slider>;
 };

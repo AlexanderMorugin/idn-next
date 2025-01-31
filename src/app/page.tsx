@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 
 import { Heading } from '@/components';
 // import { SwiperSlider } from '@/components/swiper-slider';
-import { NewSwiper } from '@/components/new-swiper';
+// import { NewSwiper } from '@/components/new-swiper';
+import { SlickStaticProps } from '@/components/slick-stati-props';
 
 export const metadata: Metadata = {
   title: 'Наши услуги | IDN Next Slider',
@@ -15,7 +16,8 @@ export default function Home() {
       <Heading />
       {/* <SwiperSlider /> */}
 
-      <NewSwiper />
+      {/* <NewSwiper /> */}
+      <SlickStaticProps />
     </>
   );
 }
