@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 
 import { Heading } from '@/components';
-import { SwiperSlider } from '@/components/swiper-slider';
+// import { SwiperSlider } from '@/components/swiper-slider';
+import { NewSwiper } from '@/components/new-swiper';
 
 export const metadata: Metadata = {
   title: 'Наши услуги | IDN Next Slider',
@@ -12,7 +13,9 @@ export default function Home() {
   return (
     <>
       <Heading />
-      <SwiperSlider />
+      {/* <SwiperSlider /> */}
+
+      <NewSwiper />
     </>
   );
 }

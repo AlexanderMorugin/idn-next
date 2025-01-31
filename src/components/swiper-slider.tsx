@@ -2,10 +2,11 @@
 
 import { FC, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
+
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 
 import { CardBox, Container } from '.';
 import { useCardStore } from '../../store/use-card-store';
@@ -17,9 +18,12 @@ export const SwiperSlider: FC = ({}) => {
     getCardItems();
   }, [getCardItems]);
 
+
+
   return (
     <Container className='px-4 pt-[21px]'>
       <Swiper
+        autoplay={true}
         speed={1000}
         spaceBetween={16}
         slidesPerView='auto'
@@ -32,7 +36,7 @@ export const SwiperSlider: FC = ({}) => {
           nextEl: '.button-next-slide',
           prevEl: '.button-prev-slide',
         }}
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay, Pagination]}
         className='mySwiper'
       >
         {cardItems.map((item) => (
@@ -45,11 +49,13 @@ export const SwiperSlider: FC = ({}) => {
           </SwiperSlide>
         ))}
 
-        <div
-          className='swiper-pagination [&_.swiper-pagination-bullet-active]:bg-grey-light
+        <div className='absolute top-[10px]'>
+          <div
+            className='swiper-pagination [&_.swiper-pagination-bullet-active]:bg-grey-light
     [&_.swiper-pagination-bullet-active]:w-10
     [&_.swiper-pagination-bullet-active]:rounded-md md:hidden'
-        ></div>
+          ></div>
+        </div>
       </Swiper>
     </Container>
   );

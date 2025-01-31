@@ -14,8 +14,7 @@ body {
 }
 
 .swiper-pagination {
-  top: 10px !important;
-  text-align: left !important;
+  position: relative !important;
 }
 
 .swiper-slide {
@@ -33,7 +32,7 @@ body {
   background: #ccc !important;
   background-image: url('../assets/icons/pagination-bullet-active.svg') !important;
   background-repeat: no-repeat !important;
-  animation: scale 0.3s ease-in-out
+  animation: scale 0.3s ease-in-out;
 }
 
 @keyframes scale {
