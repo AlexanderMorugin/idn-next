@@ -55,15 +55,10 @@ const settings = {
 };
 
 export async function getStaticProps() {
-  // Call the fetch method and passing
-  // the pokeAPI link
   const response = await fetch('https://idn-next-jswp.vercel.app/api/cards/');
 
-  // Parse the JSON
   const data = await response.json();
 
-  // Finally we return the result
-  // inside props as allPokemons
   return {
     props: { cardItems: data.results },
   };
@@ -75,7 +70,7 @@ export const SlickStaticProps = () => {
   useEffect(() => {
     getCardItems();
   }, [getCardItems]);
-  
+
   const slides = cardItems.map((item: Card) => (
     <aside key={item.id} className='p-4'>
       <div className='flex flex-col justify-between h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab md:mt-0 md:h-[256px]'>
