@@ -1,12 +1,15 @@
-'use client';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// 'use client';
 
 import Image from 'next/image';
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useCardStore } from '../../store/use-card-store';
-import { useEffect } from 'react';
+import { Card } from '@prisma/client';
+// import { useCardStore } from '../../store/use-card-store';
+// import { useEffect } from 'react';
 
 const settings = {
   dots: true,
@@ -49,18 +52,35 @@ const settings = {
   ],
 };
 
-export const NewSwiper = () => {
-  const { cardItems, getCardItems } = useCardStore((state) => state);
+export async function getStaticProps() {
+ 
+  // Call the fetch method and passing 
+  // the pokeAPI link
+  const response = await fetch(
+      'https://idn-next-jswp.vercel.app/api/cards/');
 
-  useEffect(() => {
-    getCardItems();
-  }, [getCardItems]);
+  // Parse the JSON
+  const data = await response.json();
+
+  // Finally we return the result
+  // inside props as allPokemons
+  return {
+      props: { cardItems: data.results },
+  };
+}
+
+export const SlickStaticProps = ({cardItems}: any) => {
+  // const { cardItems, getCardItems } = useCardStore((state) => state);
+
+  // useEffect(() => {
+  //   getCardItems();
+  // }, [getCardItems]);
 
   return (
     <Slider {...settings}>
-      {cardItems.map((item, i) => {
+      {cardItems.map((item: Card) => {
         return (
-          <aside key={i} className='p-4'>
+          <aside key={item.id} className='p-4'>
             <div className='flex flex-col justify-between h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab md:mt-0 md:h-[256px]'>
               <div className='flex flex-row justify-between gap-6 h-full md:flex-col'>
                 <Image
