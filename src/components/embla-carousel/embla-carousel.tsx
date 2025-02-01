@@ -2,7 +2,9 @@
 
 'use client';
 
-import React, { useEffect } from 'react';
+// import React, 
+// // { useEffect } 
+// from 'react';
 import { DotButton, useDotButton } from './embla-carousel-dot-button';
 import {
   PrevButton,
@@ -10,21 +12,23 @@ import {
   usePrevNextButtons,
 } from './embla-carousel-arrow-buttons';
 import useEmblaCarousel from 'embla-carousel-react';
-import { CardBox, Container } from '..';
-import { useCardStore } from '../../../store/use-card-store';
+import { 
+  // CardBox, 
+  Container } from '..';
+// import { useCardStore } from '../../../store/use-card-store';
 
 const EmblaCarousel = (props: any) => {
   const {
-    // slides,
+    slides,
     options,
   } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
-  const { cardItems, getCardItems } = useCardStore((state) => state);
+  // const { cardItems, getCardItems } = useCardStore((state) => state);
 
-  useEffect(() => {
-    getCardItems();
-  }, [getCardItems]);
+  // useEffect(() => {
+  //   getCardItems();
+  // }, [getCardItems]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -41,16 +45,23 @@ const EmblaCarousel = (props: any) => {
       <div className='embla'>
         <div className='embla__viewport' ref={emblaRef}>
           <div className='embla__container'>
-            {cardItems.map((item: any) => (
+
+          {slides.map((index: any) => (
+            <div className="embla__slide" key={index}>
+              <div className="embla__slide__number">{index + 1}</div>
+            </div>
+          ))}
+
+            {/* {slides.map((item: any) => (
               <div className='embla__slide' key={item.id}>
                 <CardBox
                   imageUrl={item.imageUrl}
                   title={item.title}
                   subtitle={item.subtitle}
                 />
-                {/* <div className='embla__slide__number'>{index + 1}</div> */}
+               
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
 

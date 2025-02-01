@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 const OPTIONS = { align: 'start' };
+const SLIDE_COUNT = 6
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 export default function Home() {
@@ -21,7 +23,7 @@ export default function Home() {
       {/* <SwiperSlider /> */}
 
       <EmblaCarousel
-        // slides={SLIDES}
+        slides={SLIDES}
         options={OPTIONS}
       />
     </>
