@@ -2,7 +2,7 @@
 
 Проект задеплоен на Vercel: https://idn-next-jswp.vercel.app/
 
-![Pralinecakes Demo](/praline-tailwind.png)
+![IND-NEXT Demo](/idn-next-promo.png)
 
 ## О проекте
 
