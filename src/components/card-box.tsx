@@ -9,8 +9,8 @@ interface Props {
 
 export const CardBox: FC<Props> = ({ imageUrl, title, subtitle }) => {
   return (
-    <div className='flex flex-col justify-between h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab md:mt-0 md:h-[256px]'>
-      <div className='flex flex-row justify-between gap-6 h-full md:flex-col'>
+    <div className='flex flex-col justify-between w-[358px] h-[212px] bg-card rounded-lg p-6 mt-[50px] cursor-grab select-none md:mt-0 md:h-[256px] md:w-[412px]'>
+      <div className='flex flex-row gap-6 h-full md:flex-col md:justify-between'>
         <Image
           src={imageUrl}
           alt='Картинка карточки'
