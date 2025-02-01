@@ -2,8 +2,8 @@ import { type FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logoIcon from '@/assets/icons/logo-big.svg';
-import exitIcon from '@/assets/icons/exit.svg';
+import logoIcon from '../../public/logo-big.svg';
+import exitIcon from '../../public/exit.svg';
 import { Routes } from '@/shared/routes';
 import { headerNavData } from '@/shared';
 import { Container } from '.';

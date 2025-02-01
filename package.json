@@ -17,25 +17,19 @@
   },
   "dependencies": {
     "@prisma/client": "^6.3.0",
-    "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.5.2",
     "next": "15.1.6",
     "prisma": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1",
-    "swiper": "^11.2.1",
-    "tailwind-merge": "^2.6.0",
-    "zustand": "^5.0.3"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20.17.16",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/react-slick": "^0.23.13",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",

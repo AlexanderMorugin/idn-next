@@ -22,7 +22,7 @@ body {
 
 .embla__dot--selected {
   background: #ccc;
-  background-image: url('../assets/icons/pagination-bullet-active.svg');
+  background-image: url('../../public/pagination-bullet-active.svg');
   background-repeat: no-repeat;
   width: 40px;
   height: 8px;

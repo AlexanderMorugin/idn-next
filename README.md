@@ -1,40 +1,42 @@
-https://idn-next-jswp.vercel.app/
+<h1 align="center">Тестовое задание Веб-разработчик IND</h1>
 
+Проект задеплоен на Vercel: https://idn-next-jswp.vercel.app/
 
+![Pralinecakes Demo](/praline-tailwind.png)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## О проекте
 
-## Getting Started
+- Проект реализован на Next.js 15 (App Router) - TypeScript, с использованием Tailwind в качестве стилизации.
 
-First, run the development server:
+- Состоит из фонтенд и бекенд частей, где бекенд сделан также в Next.js и хостится на сервере Vercel в виде реляционной PostgreSQL базы данных. Там же располагается и фронт часть. Связь Бека с Фронтом осуществляет Prisma.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Чтобы посмотреть базу бекенд части, нужно запустить команду npm run prisma studio.
+
+- Приложение адаптировано для различных разрешений экрана и браузеров.
+
+- Реализован слайдер с пагинацией, выполненный на лёгкой карусельной библиотеке Embla Carousel. Слайдер пререндерится на сервере. При первичном запросе бекенд отдает статический html с семантической версткой слайдера и контентом.
+
+## Как запустить проект:
+
+Клонирование репозитория
+
+```
+git clone https://github.com/AlexanderMorugin/idn-next
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Установка зависимостей
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Запуск проекта
 
-## Learn More
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Александр Моругин\
+февраль 2025г
