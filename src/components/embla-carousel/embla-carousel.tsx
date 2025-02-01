@@ -2,8 +2,8 @@
 
 'use client';
 
-// import React, 
-// // { useEffect } 
+// import React,
+// // { useEffect }
 // from 'react';
 import { DotButton, useDotButton } from './embla-carousel-dot-button';
 import {
@@ -12,9 +12,9 @@ import {
   usePrevNextButtons,
 } from './embla-carousel-arrow-buttons';
 import useEmblaCarousel from 'embla-carousel-react';
-import { 
-  // CardBox, 
-  Container } from '..';
+import { CardBox, Container } from '..';
+// import { use } from 'react';
+// import { fetchNavs } from '@/app/layout';
 // import { useCardStore } from '../../../store/use-card-store';
 
 const EmblaCarousel = (props: any) => {
@@ -22,6 +22,9 @@ const EmblaCarousel = (props: any) => {
     slides,
     options,
   } = props;
+
+
+
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   // const { cardItems, getCardItems } = useCardStore((state) => state);
@@ -45,23 +48,21 @@ const EmblaCarousel = (props: any) => {
       <div className='embla'>
         <div className='embla__viewport' ref={emblaRef}>
           <div className='embla__container'>
-
-          {slides.map((index: any) => (
+            {/* {slides.map((index: any) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">{index + 1}</div>
             </div>
-          ))}
+          ))} */}
 
-            {/* {slides.map((item: any) => (
+            {slides.map((item: any) => (
               <div className='embla__slide' key={item.id}>
                 <CardBox
                   imageUrl={item.imageUrl}
                   title={item.title}
                   subtitle={item.subtitle}
                 />
-               
               </div>
-            ))} */}
+            ))}
           </div>
         </div>
 
