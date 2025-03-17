@@ -1,4 +1,4 @@
-<h1 align="center">Тестовое задание Веб-разработчик IND</h1>
+<h1 align="center">Слайдер Next.js SSR</h1>
 
 Проект задеплоен на Vercel: https://idn-next-jswp.vercel.app/
 
